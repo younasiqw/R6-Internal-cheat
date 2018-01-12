@@ -17,13 +17,13 @@ void Accuracy::AccuracyMain()
 	// Do our Nospread
 	if (Settings::GetInstance()->bAccuracyNoSpread)
 	{
-		Accuracy::DoNoSpread();
+	//	Accuracy::DoNoSpread();
 	}
 
 	// Do our Norecoil
 	if (Settings::GetInstance()->bAccuracyNoRecoil)
 	{
-		Accuracy::DoNoRecoil();
+	//	Accuracy::DoNoRecoil();
 	}
 
 //	if (Settings::GetInstance()->bAccuracyAimbot && (GetAsyncKeyState(VK_SHIFT) & 0x8000))
