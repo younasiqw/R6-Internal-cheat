@@ -17,19 +17,19 @@ void Accuracy::AccuracyMain()
 	// Do our Nospread
 	if (Settings::GetInstance()->bAccuracyNoSpread)
 	{
-	//	Accuracy::DoNoSpread();
+		Accuracy::DoNoSpread();
 	}
 
 	// Do our Norecoil
 	if (Settings::GetInstance()->bAccuracyNoRecoil)
 	{
-	//	Accuracy::DoNoRecoil();
+		Accuracy::DoNoRecoil();
 	}
 
-//	if (Settings::GetInstance()->bAccuracyAimbot && (GetAsyncKeyState(VK_SHIFT) & 0x8000))
-//	{
-//		Accuracy::DoAimbot();
-//	}
+	//	if (Settings::GetInstance()->bAccuracyAimbot && (GetAsyncKeyState(VK_SHIFT) & 0x8000))
+	//	{
+	//		Accuracy::DoAimbot();
+	//	}
 }
 
 float GetDistance(float Xx, float Yy, float xX, float yY)
@@ -115,15 +115,11 @@ void Accuracy::DrawAimFOV()
 void Accuracy::DoNoSpread()
 {
 	auto pGameManager = Engine::GameManager::GetInstance();
-	if (pGameManager->IsInGame())
+	if (pGameManager)
 	{
-		float Spread = pGameManager->GetSpread();
-		if (Spread > 0.f && Spread < 1.f)
+		for (uint64_t i = 0; i < pGameManager->GetEntities().GetSize(); i++)
 		{
-			if (Spread != Settings::GetInstance()->fSpread)
-			{
-				pGameManager->GetSpread() = Settings::GetInstance()->fSpread;
-			}
+			pGameManager->GetSpread(i) = Settings::GetInstance()->fSpread;
 		}
 	}
 }
@@ -131,15 +127,11 @@ void Accuracy::DoNoSpread()
 void Accuracy::DoNoRecoil()
 {
 	auto pGameManager = Engine::GameManager::GetInstance();
-	if (pGameManager->IsInGame())
+	if (pGameManager)
 	{
-		float Recoil = pGameManager->GetRecoil();
-		if (Recoil > 0.f && Recoil < 1.f)
+		for (uint64_t i = 0; i < pGameManager->GetEntities().GetSize(); i++)
 		{
-			if (Recoil != Settings::GetInstance()->fRecoil)
-			{
-				pGameManager->GetRecoil() = Settings::GetInstance()->fRecoil;
-			}
+			pGameManager->GetRecoil(i) = Settings::GetInstance()->fSpread;
 		}
 	}
 }

@@ -16,8 +16,8 @@ namespace Engine
 			Array<Entity*> GetEntities();
 
 			static GameManager* GetInstance();
-			float& GetSpread();
-			float& GetRecoil();
+			float& GetSpread(int count);
+			float& GetRecoil(int count);
 			bool IsInGame();
 			int IsInCross();
 			

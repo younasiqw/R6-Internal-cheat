@@ -82,122 +82,50 @@ namespace Engine
 			return 0;
 	}
 
-	float& GameManager::GetSpread()
+	float& GameManager::GetSpread(int count)
 	{
 		float Error = 0.26f;
 
-		auto p0 = *Memory::Ptr<void**>(this, 0x638);
+		auto p0 = *Memory::Ptr<void**>(this, 0xD0);
 
+		auto p1 = *Memory::Ptr<void**>(p0, 0x8 * count);
 
-		auto p_1 = *Memory::Ptr<void**>(p0, 0x60);
+		auto p2 = *Memory::Ptr<void**>(p1, 0x18);
 
+		auto p3 = *Memory::Ptr<void**>(p2, 0xB8);
 
-		auto p1 = *Memory::Ptr<void**>(p_1, 0x8);
+		auto p4 = *Memory::Ptr<void**>(p3, 0x38);
 
+		auto p5 = *Memory::Ptr<void**>(p4, 0xF0);
 
-		auto p2 = *Memory::Ptr<void**>(p1, 0x0);
+		auto p6 = *Memory::Ptr<void**>(p5, 0x0);
 
+		auto p7 = *Memory::Ptr<void**>(p6, 0x110);
 
-		auto p3 = *Memory::Ptr<void**>(p2, 0x120);
-
-		if (!Memory::IsValidPtr<void>(p3))
-			return Error;
-
-		auto p4 = *Memory::Ptr<void**>(p3, 0x20);
-
-		if (!Memory::IsValidPtr<void>(p4))
-			return Error;
-
-		auto p5 = *Memory::Ptr<void**>(p4, 0x18);
-
-		if (!Memory::IsValidPtr<void>(p5))
-			return Error;
-
-		auto p6 = *Memory::Ptr<void**>(p5, 0xB8);
-
-		if (!Memory::IsValidPtr<void>(p6))
-			return Error;
-
-		auto p7 = *Memory::Ptr<void**>(p6, 0x38);
-
-		if (!Memory::IsValidPtr<void>(p7))
-			return Error;
-
-		auto p8 = *Memory::Ptr<void**>(p7, 0xF0);
-
-		if (!Memory::IsValidPtr<void>(p8))
-			return Error;
-
-		auto p9 = *Memory::Ptr<void**>(p8, 0x0);
-
-		if (!Memory::IsValidPtr<void>(p9))
-			return Error;
-
-		auto p10 = *Memory::Ptr<void**>(p9, 0x110);
-
-		if (!Memory::IsValidPtr<void>(p10))
-			return Error;
-
-		return *Memory::Ptr<float*>(p10, 0x2A0);
+		return *Memory::Ptr<float*>(p7, 0x2A0);
 	}
 
-	float& GameManager::GetRecoil()
+	float& GameManager::GetRecoil(int count)
 	{
 		float Error = 0.26f;
 
-		auto p0 = *Memory::Ptr<void**>(this, 0x638);
+		auto p0 = *Memory::Ptr<void**>(this, 0xD0);
 
+		auto p1 = *Memory::Ptr<void**>(p0, 0x8 * count);
 
-		auto p_1 = *Memory::Ptr<void**>(p0, 0x60);
+		auto p2 = *Memory::Ptr<void**>(p1, 0x18);
 
+		auto p3 = *Memory::Ptr<void**>(p2, 0xB8);
 
-		auto p1 = *Memory::Ptr<void**>(p_1, 0x8);
+		auto p4 = *Memory::Ptr<void**>(p3, 0x38);
 
+		auto p5 = *Memory::Ptr<void**>(p4, 0xF0);
 
-		auto p2 = *Memory::Ptr<void**>(p1, 0x0);
+		auto p6 = *Memory::Ptr<void**>(p5, 0x0);
 
+		auto p7 = *Memory::Ptr<void**>(p6, 0x110);
 
-		auto p3 = *Memory::Ptr<void**>(p2, 0x120);
-
-		if (!Memory::IsValidPtr<void>(p3))
-			return Error;
-
-		auto p4 = *Memory::Ptr<void**>(p3, 0x20);
-
-		if (!Memory::IsValidPtr<void>(p4))
-			return Error;
-
-		auto p5 = *Memory::Ptr<void**>(p4, 0x18);
-
-		if (!Memory::IsValidPtr<void>(p5))
-			return Error;
-
-		auto p6 = *Memory::Ptr<void**>(p5, 0xB8);
-
-		if (!Memory::IsValidPtr<void>(p6))
-			return Error;
-
-		auto p7 = *Memory::Ptr<void**>(p6, 0x38);
-
-		if (!Memory::IsValidPtr<void>(p7))
-			return Error;
-
-		auto p8 = *Memory::Ptr<void**>(p7, 0xF0);
-
-		if (!Memory::IsValidPtr<void>(p8))
-			return Error;
-
-		auto p9 = *Memory::Ptr<void**>(p8, 0x0);
-
-		if (!Memory::IsValidPtr<void>(p9))
-			return Error;
-
-		auto p10 = *Memory::Ptr<void**>(p9, 0x100);
-
-		if (!Memory::IsValidPtr<void>(p10))
-			return Error;
-
-		return *Memory::Ptr<float*>(p10, 0x2D8);
+		return *Memory::Ptr<float*>(p7, 0x2D8);
 	}
 
 	int GameManager::IsInCross()
