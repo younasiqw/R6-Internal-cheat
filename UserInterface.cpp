@@ -154,6 +154,14 @@ void UserInterface::Render()
 		ImGui::Checkbox(XorStr("Snapline"), &Settings::GetInstance()->bESPSnapline);
 		ImGui::Checkbox(XorStr("Show Armor"), &Settings::GetInstance()->bESPHasArmor);
 
+		ImGui::SameLine();
+
+		ImGui::Text(XorStr("Visuals - Misc"));
+		ImGui::BeginChild(XorStr("VisualsMisc"), ImVec2(155, 156), true);
+
+		ImGui::Checkbox(XorStr("Crosshair"), &Settings::GetInstance()->bVisualsCrosshair);
+		ImGui::Checkbox(XorStr("FPS"), &Settings::GetInstance()->bVisualsFPS);
+
 		ImGui::EndChild();
 	}
 	else if (currentTab == 2)
