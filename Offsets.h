@@ -1,6 +1,6 @@
 #pragma once
-#define ADDRESS_GAMEMANAGER 0x47F00D0 // Game->  Sig: 48 8B 05 ?? ?? ?? ?? 48 8B 58 60 
-#define ADDRESS_GAMERENDERER 0x47A4930 // Game->  Sig: 48 8B 05 ?? ?? ?? ?? 48 87 10 8B C6 
+#define ADDRESS_GAMEMANAGER 0x4807FC8 // Game->  Sig: 48 8B 05 ?? ?? ?? ?? 48 8B 58 60 
+#define ADDRESS_GAMERENDERER 0x47BC660 // Game->  Sig: 48 8B 05 ?? ?? ?? ?? 48 87 10 8B C6 
 
 #define OFFSET_GAMERENDERER_DEREF 0x0 // GameRenderer->
 #define OFFSET_GAMERENDERER_ENGINELINK 0xD8 // GameRenderer->Deref
