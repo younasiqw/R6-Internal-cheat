@@ -11,25 +11,25 @@ Settings* Settings::m_pInstance;
 
 Settings::Settings()
 {
-	bool bESPEnabled = false;
+	this->bESPEnabled = false;
 
-	bool bESPBox = false;
-	bool bESPHealth = false;
-	bool bESPName = false;
-	bool bESPDistance = false;
-	bool bESPHead = false;
-	bool bESPSnapline = false;
+	this->bESPBox = false;
+	this->bESPHealth = false;
+	this->bESPName = false;
+	this->bESPDistance = false;
+	this->bESPHead = false;
+	this->bESPSnapline = false;
 
-	bool bVisualsCrosshair = false;
-	bool bVisualsFPS = false;
+	this->bVisualsCrosshair = false;
+	this->bVisualsFPS = false;
 
-	bool bAccuracyNoSpread = false;
-	float fSpread = 1.f;
-	bool bAccuracyNoRecoil = false;
-	float fRecoil = 1.f;
-	bool bAccuracNoADSRecoil = false;
+	this->bAccuracyNoSpread = false;
+	this->fSpread = 1.f;
+	this->bAccuracyNoRecoil = false;
+	this->fRecoil = 1.f;
+	this->bAccuracNoADSRecoil = false;
 
-	bool Menu = false;
+	this->Menu = false;
 }
 
 Settings::~Settings()
